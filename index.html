@@ -1,263 +1,960 @@
-<!DOCTYPE html>
-<html lang="en" dir="rtl"  >
-<head dir="rtl">
-<script type = "text/javascript" src="Scrxx3.js"></script> 
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" dir='rtl'>
-   <title>
-       معرفة الرسوم في المنافذ اليمنية 
-   </title>
-   <style dir="rtl">  
-     img { 
-     vertical-align: middle; 
-     border-style: none; 
-     }        
-     
-     body{
-  font: 15px/1.5 Arial, Helvetica,sans-serif;
-  padding:25px;
-  margin:0;
-  background-color:#f4f4f4;
-  padding-left: 15px;
-}
-.button_1{
-  height:30px;
-  background:#667756;
-  border:1;  
-  padding-left: 10px;
-  padding-right:10px;
-  color:#ffffff;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-.button_3 {
-           border: none;
-           background: green;
-           border-radius: 5px;
-           padding: 3px;
-           color: #fff;
-           font-weight: bold;
-           font-size: 11px;
-           text-transform: uppercase;
-       }  
-.button_4 {
-           border: none;
-           background: red;
-           border-radius: 5px;
-           padding: 3px;
-           color: #fff;
-           font-weight: bold;
-           font-size: 11px;
-           text-transform: uppercase;
-       }            
-    .tabs {
-  position: relative;
-  
-  width: 500px;
-  margin: 25px 0;
-  
-}
-.tab {
-  float: right;
-}
-.tab label {
-  background: #bbb; 
-  padding: 10px; 
-  border: 1px solid #ccc;
-  cursor: pointer;
-  margin-left: 1px; 
-  
-}
 
-.tab input[type=radio] {
-  display: none;   
-}
 
-input[type=radio]:checked ~ label {
-  background: white;
-  border-bottom: 1px solid white;
-}
-input[type=radio]:checked ~ label ~ .tab-content {
-  display: block;
-}
 
-   </style>
-</head>
-<body id ="ttt" onload="filesAdd()" >
 
-   <header>
-      <nav>
-         <b style="color: rgb(0,0,128)" ><h1 style="text-align:center"> معرفة الرسوم في المنافذ اليمنية </h1></b>
-         
-       <!-- <button onclick="btn()"> &#9776;</button> -->
-        
-           
-        <div id="d1"></div>
-<!-- <selectmenu id="my-custom-select" border="1" onchange="Abut()"></selectmenu>    -->  
-    <div class="tabs">                 
-  <div class="tab">
-       <input type="radio" name="gende" id="Y" checked="true" onchange="AddTag()"/>
-   <label for="Y" ><b> المنافذ البريةالرقابية
-  </b>
-   </label>
-  </div>
 
-  <div class="tab">
-    <input type="radio" name="gende" id="N" onchange="AddTag()"/>
-    
-   <label for="N" > <b>موانئ الحديدة
+
+
+
+
+
+	
+	
+	<input type="hidden" id="currentTabJson" value="" >
+	<input type="hidden" id="moduleJson" value="" >
+    <input type="hidden" id="setJson" value="" >
+	<input type="hidden" id="draftId" value="" >
+	<input type="hidden" id="applicationNo" value="0" >
+	<input type="hidden" id="applicationNumber" name="applicationNumber" value="" />
+	<input type="hidden" id="errorId" name="errorId" value=''>
+	<input type="hidden" id="hdnDelStatus" name="hdnDelStatus" value=''>
+	<input type="hidden" id="freeCnvrtRateForExport" name="freeCnvrtRate" value=''>
+	<input type="hidden" id="CurrencyImprtRateForExport" name="CurrencyImprtRate" value=''>
+	<input type="hidden" id="freeCnvrtRateForImport" name="freeCnvrtRate" value=''>
+	<input type="hidden" id="CurrencyImprtRateForImport" name="CurrencyImprtRate" value=''>
+	<input type="hidden" id="usdRateForImport" name="usdRateForImport" value=''>
+	<input type="hidden" id="usdRateForExport" name="usdRateForExport" value=''>
+	<input type="hidden" id="entityHide" name="entityHide" value="" />
+	<input type="hidden" id="deficiency" name="deficiency" value="">
+	<input type="hidden" id="fileId" name="fileId" value="">
+	<input type="hidden" id="jsMsgJson" value="" >
+	<input type="hidden" id="commonMsgJson" value="" >
+	<input type="hidden" id="personId" value="" >
+	<input type="hidden" id="directorPanValidate" value="true">
+	<input type="hidden" id="inrRateForImport" name="inrRateForImport" value=''>
+	<input type="hidden" id="inrRateForExport" name="inrRateForExport" value=''>
+	<input type="hidden" id="warningId" name="warningId" value=''>
+	<input type="hidden" id="menulistJson" name="menulistJson" value=''>
+	<input type="hidden" id="currencyChangeId" name="currencyChangeId" value=''>
+	
+	<input type="hidden" id="iecid" name="iecId" value=''>
+	
+
+
+
+
+
+	
+
+
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+	
+	
+<link
+	href="https://fonts.googleapis.com/css?family=Arimo:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/bootstrap.min.css?v=61.356" async/>
+<link rel="stylesheet" href="https://content.trade.gov.in/tcp/bootstrap/plugins/jQueryUI/jquery-ui.min.css?v=61.356" async>
+<link rel="stylesheet" href="https://content.trade.gov.in/tcp/style/css/chatbot.css?v=61.356" async>
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/chosen.min.css?v=61.356"  async/>
+<link rel='stylesheet' href='https://content.trade.gov.in/tcp/style/css/bootstrap-datepicker.min.css?v=61.356' async>
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/script/common/map/style.css?v=61.356" />
+<link rel="stylesheet" href="https://content.trade.gov.in/tcp/style/css/dataTables.bootstrap4.min.css?v=61.356" async>
+<link rel="stylesheet" href="https://content.trade.gov.in/tcp/style/css/responsive.bootstrap4.min.css?v=61.356" async>
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/jquery.scrollbar.css?v=61.356" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/TcpMain.css?v=61.356" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/Tcpcommon/Tcpcommon.css?v=61.356" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/Tcpcommon/TcpMobile.css?v=61.356" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/itchsStyle.css?v=61.356" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/tradeEvent.css?v=61.356" />
+<link rel="stylesheet" href="https://content.trade.gov.in/tcp/style/css/eCommerce.css?v=61.356" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/dgftNavbar.css?v=61.356" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/css/responsive.css?v=61.356" />
+<link rel="stylesheet" type="text/css" href="https://content.trade.gov.in/tcp/style/statusbar.css">
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/jquery.min.js?v=61.356"></script>
+<script src="https://content.trade.gov.in/tcp/script/common/sessionExpiryAlert.js?v=61.356" async></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/popper.min.js?v=61.356" async></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/bootstrap.min.js?v=61.356"></script>
+<script src="https://content.trade.gov.in/tcp/bootstrap/plugins/jQueryUI/jquery-ui.min-1.12.js?v=61.356"></script>
+<script src="https://content.trade.gov.in/tcp/script/common/map/script.js?v=61.356"></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/jquery.dataTables.min.js?v=61.356" ></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/dataTables.bootstrap4.min.js?v=61.356" ></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/dataTables.responsive.min.js?v=61.356" ></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/responsive.bootstrap4.min.js?v=61.356" ></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/bootstrap-datepicker.min.js?v=61.356" async></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/bootbox.js?v=61.356" async></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/jquery.scrollbar.min.js?v=61.356"></script>
+<!-- bootstarp 4 file js -->
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/multislider.js?v=61.356"></script>
+<!-- bootstarp 4 file js -->
+
+<!-- PasswordEnc -->
+<script type="text/javascript" src="https://content.trade.gov.in/tcp/script/aes/aes.js?v=61.356" async></script>
+<script type="text/javascript" src="https://content.trade.gov.in/tcp/script/aes/AesUtil.js?v=61.356" async></script>
+<script type="text/javascript" src="https://content.trade.gov.in/tcp/script/aes/pbkdf2.js?v=61.356" async></script>
+
+<script src="https://content.trade.gov.in/tcp/assets/js/jquery.smartmenus.min.js?v=61.356"></script>
+
+<script type="text/javascript" src="https://content.trade.gov.in/tcp/script/content.js?v=61.356"></script>
+<script src="https://content.trade.gov.in/tcp/script/dgft/commonfunctions.js?v=61.356"></script>
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/chosen.jquery.min.js?v=61.356" ></script>
+<script src="https://content.trade.gov.in/tcp/script/common/commonValidation.js?v=61.356" async></script>
+	
+<script src="https://content.trade.gov.in/tcp/script/common/previewAttachment.js?v=61.356" async></script>
+	
    
-   </b>
-   </label>
-   </div><br />
+  
+   
+	<link href="https://content.trade.gov.in/tcp/style/css/buttons.dataTables.min.css" async>
+<script type="text/javascript"
+	src="https://content.trade.gov.in/tcp/script/cas/homepage/dataTables.buttons.min.js" async></script>
+<script type="text/javascript"
+	src="https://content.trade.gov.in/tcp/script/cas/homepage/vfs_fonts.js" async></script>
+<script type="text/javascript"
+	src="https://content.trade.gov.in/tcp/script/cas/homepage/buttons.html5.min.js" async></script>
+	<script type="text/javascript"
+	src="https://content.trade.gov.in/tcp/script/cas/homepage/buttons.print.min.js" async></script>
+  	<script  type="text/javascript"
+	src="https://content.trade.gov.in/tcp/script/cas/homepage/jszip.min.js" async></script>
+	 
+	 <script type="text/javascript" src="https://content.trade.gov.in/tcp/script/googleCharts/loader.js" async></script>
+	
+	<script
+src="https://translation-plugin.bhashini.co.in/v2/website_translation_utility.js" data-pos-x="99" data-pos-y="1"></script>
 
+<script src="https://content.trade.gov.in/tcp/script/cas/homepage/motamoScript.js"></script>
+
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="_csrf_header" content="X-CSRF-TOKEN" />
+	<meta name="robots" content="index">
+	<link type="text/css" href="https://content.trade.gov.in/tcp/style/css/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+<!-- Breadcrumb And Title -->
+<div class="container-fluid hide-mob">
+
+	<div class="row">
+		<div class="col-md-12">
+			<nav aria-label="breadcrumb">
+				<ol class="breadcrumb bg-transparent pl-0 mb-0">
+					<li class="breadcrumb-item font-11 text-gray"><a
+						class="font-11 text-gray" href="#">Services</a></li>
+					<li aria-current="page"
+						class="breadcrumb-item active font-11 text-gray">Verify
+						Document</li>
+				</ol>
+			</nav>
+		</div>
+	</div>
 </div>
-<input type="button" onclick="newXX()" value="جديد"class="button_1"/>
-<label id ="lnkUpdt" style="color:red"> متبقي لك</label>
-<form id="frmAll" style="background-color: rgb(1, 128, 128)">
-    <label id="titl" style="color:maroon"><b>معرفة الرسوم الجمركية للمنافذ البرية :</b></label>
-   <table border=1>
-     <tr> <td height ="10">
-         <b style="color: maroon"  >
- العملة
-&#128184 </b>
-  </td><td> <select id="susd" onchange="selectusd()" class="input">
-    <option value="68.2">AED</option>
-<option value="179.23">AUD</option>
-<option value="135.15">BGL</option>
-<option value="664.44">BHD</option>
-<option value="195.65">CAD</option>
-<option value="258.43">CHF</option>
-<option value="37.93">CNY</option>
-<option value="629.79">CYP</option>
-<option value="35.52">DKK</option>
-<option value="13.56">EGP</option>
-<option value="4.83">ETB</option>
-<option value="264.33">EUR</option>
-<option value="314.63">GBP</option>
-<option value="3.27">INR</option>
-<option value="0.01">IRR</option>
-<option value="353.31">JOD</option>
-<option value="1.92">JPY</option>
-<option value="0.2">KRW</option>
-<option value="816.81">KWD</option>
-<option value="0.17">LBP</option>
-<option value="25.1">MAD</option>
-<option value="57.42">MYR</option>
-<option value="26.93">NOK</option>
-<option value="850.63">OMR</option>
-<option value="1.35">PKR</option>
-<option value="56.38">PLN</option>
-<option value="60.63">PLZ</option>
-<option value="68.67">QAR</option>
-<option value="66.79">SAR</option>
-<option value="25.74">SEK</option>
-<option value="180.95">SGD</option>
-<option value="0.1">SYO</option>
-<option value="0.1">SYP</option>
-<option value="7.27">THB</option>
-<option value="82.13">TND</option>
-<option value="144.1">TPY</option>
-<option value="16.99">TRL</option>
-<option value="8.49">TWD</option>
-<option value="250.5"selected="true">USD</option>
-<option value="1">YER</option>
-  </select>         </td>
-  
- <td> <input type="number" name="Dollar" id="Dollar" value ="250.5" style="width : 80px" onfocus="fcus(this.id)"/> </td> 
-  </tr> 
-  </table>
-  
-    <table border=1 >
-     <tr> <td>
-     <b style="color: maroon"  >    
-   شروط التسليم :
-  </td><td>
-      <select id="scif" style="width:120px" class="input">
-<option value="1.01">CFR</option>
-<option value="1" selected="true">CIF</option>
-<option value="1">CIP</option>
-<option value="1">DAF</option>
-<option value="1">DDB</option>
-<option value="1">EXQ</option>
-<option value="1">EXW</option>
-<option value="1">FAS</option>
-<option value="1">FOA</option>
-<option value="1.250">FOB</option>    
-         </select>         
-  </td></tr> </table>
-  <table border=1 id="dd">
-     <tr> <td>
-     <b style="color: maroon"  >    
-   نوع النقل :
-  </td><td>
-     <input type="radio" name="gender1" id="N2" onchange="f()">
-   <label for="No2">بحري</label>
-   
-   
-   <input type="radio" name="gender1" id="Y2" checked="true" onchange="f()" />
-    <label for="Yes2"> بري </label>
-   
-   </td>
-      <td>
-          <b style="color: maroon"  >
-   عدد القواطر :
-    </td><td> <input type="text" id="Qat" placeholder="عدد القواطر" style="width : 40px" value="1" onfocus="fcus(this.id)"/>   </td></tr></table><table border=1>
-     <tr> <td>
-    <b style="color: maroon"  >
-               هل المستورد من كبار المكلفين ؟
- </td><td>     <input type="radio" name="gender" id="Y1" onchange="clrs()" /> &#10004;
-   <!-- <label id="Yes1"> نعم </label> -->
-   <!-- <img src="images\yes.png" width="25" height="25" id="yy2"> -->
-       <input type="radio" name="gender" id="N1" checked="true" onchange="clrs()" />
-  &#10006;     
-       
-   <!-- <label id="No1" > لا </label> -->
-<!--    <img src="images\no.png" width="25" height="25" style="background-color: #bbb" id="nn2"> -->
-   </td></table>
-  <table border=1>
-     <tr> <td>
-    <b style="color: maroon"  >
-               هل المصرح نفس المستورد ؟
- </td><td>     <input type="radio" name="gender4" id="Y4" onchange="clrs()"/>
-   <!-- <label id="Yes4"> نعم </label> -->
-   &#10004;
-   <!-- <img src="images\yes.png" width="25" height="25" id="yy3"> -->
-       <input type="radio" name="gender4" id="N4" checked="true" onchange="clrs()"/>
-      &#10006; 
-       <!-- <img src="images\no.png" width="25" height="25" id="nn3" style="background-color: #bbb"> -->
-   <!-- <label id="No4" > لا </label> -->
-   </td></table> 
- <table border=1>
-     <td>
-        <b style="color: maroon"  >
-     الاتفاقيات :
-     <td>
-    <!--    <select id="sels" style="width:120px" class="input">
-<option value="1" selected="true"> </option>
-<option value="1">ELS</option>    
-         </select>       -->
-         <input type ="text" id="sels" onfocus="fcus(this.id)"/>
-     </td>  
-   </td></table>   
-  <table border=1>
-     <tr> <td>
-         <b style="color: maroon"  >
-     عدد الاصناف :
- </td><td>  <input type="number" name="Num" id="NumPkg1" placeholder="عدد الاصناف" style="width : 80px" oninput= "generateTable()" onfocus="fcus(this.id)"/></td>
- <td>
-     <textarea id="pst" placeholder="الصق من اقرار اكسل بنفس الترتيب"  style="font-size: 11px; width :200px; text-align:right;"  onchange="pastexcel()" onfocus="fcus(this.id)"></textarea>
- </td><td>
-   <input type="button" onclick="pastexcel()" value="موافق"class="button_2"/>
- </td>
- </tr></table>
-   <form id ="dv1"></form>
-   <input"text" id= "outp"></input>
-  <input type ="button" onclick="addrow()" value ="اضافة صنف &#10133;" class="button_3"/>
-        <input type ="button" onclick="delrow()" value ="حذف صنف &#10134;" class="button_4"/>   
-   <div id= "output1" style="background-color: rgb(255, 255, 230)"></div>
-<div id= "output2" style="background-color: rgb(255, 255, 230)"></div>
-<textarea id = "output" visibility="hidden"  style="background-color: rgb(255, 255, 230)"></textarea>
-</form>
+<!-- Breadcrumb And Title -->
 
-</body>
-</html>
+<div class="tab-pane" id="udinDataPreview">
+	<div class="mx-3 pb-5">
+		<div class="main-section px-0">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="custom-accordion">
+						<div class="card custom-panel-card">
+							<div class="card-header custom-panel-blue">
+								<h6 class="text-white font-weight-normal">Verification
+									Document</h6>
+								<a class="card-link text-white float-right collapsed-icon"
+									data-toggle="collapse" href="#verificationDocument"> </a>
+							</div>
+							<div id="verificationDocument" class="collapse show"
+								data-parent="#custom-accordion">
+								<div id="verificationDocumentId" class="container-fluid">
+									<div class="card-body custom-mov">
+										<!-- <div class="container-fluid py-5"> -->
+										
+										<div id="udinNodtls" class="d-none">
+											<div class="row">
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold">Certificate Number</label>
+														<p class="font-12 text-gray">GC/2026/016/2208522A/00021803</p>
+													</div>
+
+												</div>
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold"> IEC</label>
+														<p class="font-12 text-gray">0898008026</p>
+													</div>
+												</div>
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold">Firm Name
+														</label>
+														<p class="font-12 text-gray">KOEL FLUID DYNAMICS PRIVATE LIMITED</p>
+													</div>
+												</div>
+
+												<!-- <div class="col-md-5">
+												<div class="form-group  px-5">
+													<label class="font-12 font-weight-semi-bold">Verification
+														Status </label>
+													<p class="font-12 text-gray verifyStatus w-50"
+														id="verificationStatus">Valid</p>
+													
+														<p class="font-12 text-gray">The UDIN has been issued
+															by DGFT.Please validate with the metadata below</p>
+													
+													
+												</div>
+											</div>
+											<div class="col-md-4">
+													<label class="font-12 font-weight-semi-bold">Request
+														Generated By </label>
+													<div class="d-flex">
+														
+															<div class="px-3">
+																<label class="custom-form-label">IP : </label>
+																<p class="font-12 text-gray">185.80.143.130</p>
+															</div>
+														
+															<div class="px-3">
+																<label class="custom-form-label">Date : </label>
+																<p class="font-12 text-gray">29/04/2026 08:16:58</p>
+															</div>
+														
+													</div>
+
+												
+											</div> -->
+											</div>
+											<div class="row">
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold">Scheme</label>
+														<p class="font-12 text-gray">Certificate Of Origin</p>
+													</div>
+												</div>
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold"> Process</label>
+														<p class="font-12 text-gray">Certificate Of Origin</p>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold">Date of
+															Issue of Document </label>
+														<p class="font-12 text-gray">11/02/2026</p>
+														
+													</div>
+												</div>
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold">Document
+															Type </label>
+														<p class="font-12 text-gray">Certificate Of Origin Letter</p>
+													</div>
+												</div>
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold"> Issuing Office </label>
+														<p class="font-12 text-gray">Gujarat Chamber of Commerce and Industry</p>
+													</div>
+												</div>
+
+											</div>
+											<div class="row">
+												<div class="col-md-3 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold">Current Status</label>
+														<p class="font-12 text-gray curStatus" id="currentStatus"></p>
+														
+														
+														
+														
+													</div>
+												</div>
+
+											</div>
+											
+											<div class="row">
+												<div class="col-md-4 col-12 col-sm-12">
+													<input type="hidden" id="appId" name="appId"
+														value="315001" />
+
+												</div>
+											</div>
+											<!--  <div class="row d-none" id=udinPopup>
+											<div class="col-md-4">
+												<div class="form-group">
+														<label class="font-12 font-weight-semi-bold pr-3">UDIN
+															Number</label> <input type="text" class="form-control"
+															name="udinNo" id="udinNo" />
+												</div>
+											</div>
+											<div class="col-md-4">
+												<button type="button" id="searchUdinDtls"
+													class="font-12 font-weight-semi-bold btn btn-blue-custom px-4 mx-1 py-2 mt-4"
+													onclick="fetchOtherUdinDtls();">Search</button>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-4">
+												<button type="button" id="openPopup"
+													class="font-12 font-weight-semi-bold btn btn-blue-custom px-4 mx-1 py-2 my-5 "
+													onclick="getAnotherUdinDtls();">Check Another UDIN</button>
+											</div>-->
+											<div class="row">
+												
+													
+												<div class="col-md-4">
+													<div class="form-group">
+																
+																	<a href="https://www.trade.gov.in//Upload?flag=viewTempAttach&attachmentNameHidden=attach_2&print=true&mpgId=bPnTpkdQMAq1FPGk%2BW2lHtzoHmUEnWmdCCvrBwl1Qe7Of9Ioea%2FWvF%2BGr68TqvcvfcB4S7Lu5m7rU%2BX58zGbJSaizJyBUD3odgft21511181947400"
+																		target="_blank"> Download Document</a>
+													
+													</div>
+												</div>
+													
+													
+												
+											</div>
+
+											
+
+											<div id="additionalDtls" class="mt-2 d-none">
+												<h6 class="font-14 font-weight-bold">Additional Details</h6>
+												<div class="row d-none" id="authNumber">
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Authorisation
+																Number</label>
+															<p class="font-12 text-gray" id="authNumner"></p>
+														</div>
+													</div>
+												</div>
+												<div class="row d-none" id="generalInfoDtls">
+													<div class="col-md-4 col-12 col-sm-12">
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">IEC of
+																Supplier </label>
+															<p class="font-12 text-gray"></p>
+														</div>
+													</div>
+													<div class="col-md-4 col-12 col-sm-12">
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Supplier
+																Name</label>
+															<p class="font-12 text-gray"></p>
+														</div>
+													</div>
+
+												</div>
+												<div class="row d-none" id="authDtls">
+													<div class="col-md-4 col-12 col-sm-12">
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Last
+																Amendment Date </label>
+															
+															<p class="font-12 text-gray"></p>
+														</div>
+													</div>
+
+												</div>
+												<div class="row d-none" id="rcmcCertificateDtls">
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Certificate End Date</label>
+															<p class="font-12 text-gray" id="authNumner"></p>
+														</div>
+													</div>
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Description of goods/ services for which registered</label>
+															<p class="font-12 text-gray" id="authNumner"></p>
+														</div>
+													</div>
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">EPC Issuing Office</label>
+															<p class="font-12 text-gray" id="authNumner"></p>
+														</div>
+													</div>
+												</div>
+												<div class="row d-none" id="shcCertificateDtls">
+													
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Export House Status</label>
+															<p class="font-12 text-gray" id="authNumner"></p>
+														</div>
+													</div>
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Valid Until</label>
+															<p class="font-12 text-gray" id="authNumner"></p>
+														</div>
+													</div>
+													
+												</div>
+											</div>
+											
+											<div id="iesBankTb" class="d-none">
+												<div class="form-group my-2">
+													<label class="font-12 font-weight-bold"> Bank Details</label>
+												</div>
+												<div class="card custom-panel-card">
+														<div class="container-fluid">
+														<div class="box-body">
+															<div class="row">
+																<div class="col-md-4 my-1 col-12 col-sm-12">
+																	<table id="tblBankWise" name="tblBankWise"
+																		cellpadding="0" cellspacing="0" border="0"
+																		class="table table-striped font-14 custom-datatable no-wrap"
+																		style="width: 100%">
+																		<thead>
+																			<tr>
+																				<th>Bank Name</th>
+																				<th>Branch Name</th>
+																			</tr>
+																		</thead>
+																		<tbody>
+																			
+																		</tbody>
+																	</table>
+																</div>
+															</div></div>
+														</div>
+													</div>
+												</div>
+												<!-- COO Fields Start -->
+												<div id="cooExpDtls" class="">
+												<h6 class="font-14 font-weight-bold">
+												Exporter Certificate Details </h6>
+												<div class="row">
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Application
+																Number</label>
+															<p class="font-12 text-gray" id="certificateNo">GC/2026/016/2208522A/00021803</p>
+														</div>
+													</div>
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Scheme
+																Name</label>
+															<p class="font-12 text-gray" id="scheme">Non Preferential</p>
+														</div>
+													</div>
+													<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Exporter
+																Name</label>
+															<p class="font-12 text-gray" id="exporterName">KOEL FLUID DYNAMICS PRIVATE LIMITED</p>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Exporter
+																Address</label>
+															<p class="font-12 text-gray" id="exporterAddress">PLOT NO : 33,34,35,36/1, SANAND-II INDUSTRIAL ESTATE,SANAND GIDC, OPP: MARICO LIMITED, SANAND , AHMEDABAD, GUJARAT , 382110,AHMEDABAD,GUJARAT, AHMEDABAD, 382110</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Exporter
+																Country</label>
+															<p class="font-12 text-gray" id="exporterCountry">India</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Importer
+																Name</label>
+															<p class="font-12 text-gray" id="importerName">KHALED AL-HALHALI & PARTNER COMPANY FOR TRADING</p>
+														</div>
+													</div>
+												
+												</div>
+												<div class="row">
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Importer
+																Address</label>
+															<p class="font-12 text-gray" id="importerAddress">Head office : Al Mazyunah Free Zone /Al Mazyunah / Dhofar Governorate/ Sultanate of Oman P.O.BOX:1500
+POSTAL CODE:130 TELEPHONE:+968
+98045835,Email:Top.company8@gmail.com
+,Trading Reg.no. 1424932</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Importer
+																Country</label>
+															<p class="font-12 text-gray" id="importerCountry">Oman</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+														<label class="font-12 font-weight-bold">Status
+															</label>
+														
+															<p  class="font-14 font-weight-bold" style="color:green" id="cooStatus">Valid</p>
+														
+														
+														</div>
+													</div>
+												</div>
+												<div class="row">
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Means of Transport and Route
+															(As far as known)</label>
+															<p class="font-12 text-gray" id="meanTRoute">Sea</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Invoice
+																Details</label>
+															<p class="font-12 text-gray" id="invoiceDetail">LE/CS/25-26/0153<br>
+															25/01/2026</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Application File By</label>
+															<p class="font-12 text-gray" id="appFileBy">LA GAJJAR MACHINERIES PRIVATE LTD</p>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Place of Authorised
+															Signatory</label>
+															<p class="font-12 text-gray" id="authSignPlace">GUJARAT</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Certificate issued by
+															</label>
+															<p class="font-12 text-gray" id="certIssuedBy">GOHIL NIKULSINH RAMESHSINH</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Place of Certifying
+															Authority</label>
+															<p class="font-12 text-gray" id="certAuthPlace">GUJARAT</p>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Certificate Issuing
+															Agency</label>
+															<p class="font-12 text-gray" id="certAgency">Gujarat Chamber of Commerce and Industry</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Certificate issued on
+															</label>
+															<p class="font-12 text-gray" id="certIssuedOn">11/02/2026</p>
+														</div>
+													</div>
+												<div class="col-md-4 col-12 col-sm-12" >
+														<div class="form-group">
+															<label class="font-12 font-weight-bold">Country of Origin
+															</label>
+															<p class="font-12 text-gray" id="countryofOrigin">India</p>
+														</div>
+													</div>
+												</div>
+												<div class="card custom-panel-card">
+														<div class="container-fluid">
+														<div class="box-body">
+															<div class="row">
+																<div class="col-md-12 my-1 col-12 col-sm-12">
+																	<table id="verifyCooTbl" name="verifyCooTbl"
+																		cellpadding="0" cellspacing="0" border="0"
+																		class="table table-striped font-14 custom-datatable no-wrap"
+																		style="width: 100%">
+																		<thead>
+																			<tr>
+																				<th>S.N.</th>
+																				<th>Marks and Numbers of Packages</th>
+																				<th>Number and kind of packages; Description of goods</th>
+																				<th>Origin Criterion</th>
+																				<th>Gross weight or other quantity</th> 
+																			</tr>
+																		</thead>
+																		<tbody>
+																			
+																				<tr>
+																					<td>1</td>
+																					<td>1.0</td>
+																					<td>26.04`` WL 7.5 HP TP DOL  C.I.</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 50.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>2</td>
+																					<td>1.0</td>
+																					<td>32.04`` WL? 10 HP TP? DOL? C.I.?</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 60.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>3</td>
+																					<td>1.0</td>
+																					<td>5.06``? 10 HP TP? DOL?? C.I.?</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 20.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>4</td>
+																					<td>1.0</td>
+																					<td>20.06``? 15 HP TP? DOL?? C.I.?</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 80.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>5</td>
+																					<td>1.0</td>
+																					<td>10.06``? 17.5 HP TP? DOL? C.I.?</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 40.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>6</td>
+																					<td>1.0</td>
+																					<td>14.06``? 20 HP TP? DOL? C.I.?</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 70.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>7</td>
+																					<td>1.0</td>
+																					<td>10.06``? 25 HP TP? DOL??C.I.</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 40.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>8</td>
+																					<td>1.0</td>
+																					<td>15.06``? 30 HP TP? DOL?? C.I.?</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 50.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>9</td>
+																					<td>1.0</td>
+																					<td>15.06``? 40 HP TP? DOL?? C.I.?</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 60.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>10</td>
+																					<td>1.0</td>
+																					<td>4.06``  50 HP TP  DOL    C.I.</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 12.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>11</td>
+																					<td>1.0</td>
+																					<td>2.07``? 60 HP TP? DOL?? C.I.</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 5.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>12</td>
+																					<td>1.0</td>
+																					<td>2.06RP-18 33 STAGE PUMP? SS? 65?   CONN.6''</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 10.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>13</td>
+																					<td>1.0</td>
+																					<td>5.06RP-18 40 STAGE PUMP  SS  65 CONN.6''</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 20.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>14</td>
+																					<td>1.0</td>
+																					<td>5.06RP-18 45 STAGE PUMP SS  65 CONN.6''</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 20.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>15</td>
+																					<td>1.0</td>
+																					<td>5.06RP-18 48 STAGE PUMP  SS  65  CONN.6''</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 20.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>16</td>
+																					<td>1.0</td>
+																					<td>8.06RP-18 53 STAGE PUMP SS  65 CONN.6''</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 30.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>17</td>
+																					<td>1.0</td>
+																					<td>5.06RP-18 55 STAGE PUMP SS  65 CONN.6``</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 15.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>18</td>
+																					<td>1.0</td>
+																					<td>8.06RP-18 60 STAGE PUMP SS  65 CONN.6''</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 30.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>19</td>
+																					<td>1.0</td>
+																					<td>2.06RP-18 65 STAGE PUMP SS  65 CONN.6``</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 10.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																				<tr>
+																					<td>20</td>
+																					<td>1.0</td>
+																					<td>2.06RP-18 70 STAGE PUMP SS  65 CONN.6``</td>
+																					<td>~INDIAN ORIGIN~</td>
+																					
+																					<td>GR. QTY: 10.000 NUMBERS (NOS)</td>
+																					
+																					
+																					
+																				</tr>
+																			
+																		</tbody>
+																	</table>
+																</div>
+															</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<!-- COO Fields End -->
+											<div class="row">
+												<div class="col-md-4 col-12 col-sm-12">
+													<div class="form-group">
+														<label class="font-12 font-weight-bold">Report generated on 29/04/2026 08:16:58 by 185.80.143.130</label>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://content.trade.gov.in/tcp/script/common/checkUdinJs.js?v=61.356"></script>
+<script type="text/javascript">
+	
+	if ('com.ft.common.dto.UDINMainVo@7ae96fc8' != null || 'com.ft.common.dto.UDINMainVo@7ae96fc8' != undefined) {
+		
+		
+			var udinNumber = 'GC/2026/016/2208522A/00021803';
+			if (udinNumber != "" && 'Valid' == "Valid") {
+				$("#udinNodtls").removeClass("d-none");
+				if ('' != '') {
+					$("#additionalDtls").removeClass("d-none");
+					$("#authNumber").removeClass("d-none");
+				}
+				if ('com.ft.common.dto.UDINMainVo@7ae96fc8' != null || 'com.ft.common.dto.UDINMainVo@7ae96fc8' != undefined) {
+					document.getElementById('currentStatus').value = '';
+					if ($("#currentStatus").val() == 'Valid') {
+						$(".curStatus").addClass("bg-success");
+						$(".curStatus").addClass("text-white");
+
+					} 
+					else if($("#currentStatus").val() == 'Cancel'){
+						$(".curStatus").addClass("bg-danger");
+						$(".curStatus").addClass("text-white");
+					}
+					else if($("#currentStatus").val() == 'Surrender'){
+						$(".curStatus").addClass("bg-warning");
+						$(".curStatus").addClass("text-white"); 
+						
+						}
+					else if($("#currentStatus").val() == 'Expiry'){
+						$(".curStatus").addClass("bg-warning");
+						$(".curStatus").addClass("text-white");
+					}
+					else {
+						$(".curStatus").removeClass("bg-success");
+						$(".curStatus").removeClass("bg-danger");
+						$(".curStatus").removeClass("bg-warning");
+						$(".curStatus").removeClass("text-white"); 
+
+					}
+					document.getElementById('appId').value = '315001';
+					if ($("#appId").val() == "203000005" || $("#appId").val() == "202000002") {
+						if(''!=""){
+							$("#authDtls").removeClass("d-none");
+						}
+						
+					} 
+					else if ($("#appId").val() == "203000003" || $("#appId").val()== "204000004" 
+								|| $("#appId").val() == "202000003") {
+						if(''!="" &&  ''!=""){
+							$("#generalInfoDtls").removeClass("d-none");
+						}
+					} else if ($("#appId").val() == "307000001" || $("#appId").val()== "307000002" 
+						|| $("#appId").val() == "307000004") {
+						$("#rcmcCertificateDtls").removeClass("d-none");
+						$("#additionalDtls").removeClass("d-none");
+						
+					}
+					else if ($("#appId").val() == "208000002") {
+						$("#shcCertificateDtls").removeClass("d-none");
+						$("#additionalDtls").removeClass("d-none");
+						
+					}
+				}
+			} else if ('Valid' == "InValidLegacy"){
+				$('#errormessage').next(".error-msg").remove();
+				ajax.request("webHP?requestType=ApplicationRH&actionVal=commonCaptcha&screenId=90000512",null, "udin_captcha_div");	
+					$("#udinNumber").after('<div class="error-msg">Details not found.Please enter valid UDIN and Issuing Agency.</div>');	
+					$("#udinNumber").val('');
+					$("#udinNodtls").addClass("d-none");
+			} else if ('Valid' == "InValid"){
+				$('#errormessage').next(".error-msg").remove();
+				ajax.request("webHP?requestType=ApplicationRH&actionVal=commonCaptcha&screenId=90000512",null, "udin_captcha_div");	
+					$("#udinNumber").after('<div class="error-msg">Details not found.Please enter valid UDIN.</div>');	
+					$("#udinNumber").val('');
+					$("#udinNodtls").addClass("d-none");
+			} else {
+					$("#udinNodtls").addClass("d-none");
+				}
+			if($("#appId").val() == "50000001"){
+				$("#iesBankTb").removeClass("d-none");
+				}
+		}
+</script>
+
